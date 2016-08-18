@@ -17,7 +17,7 @@ plugins.findAll { plugin ->
     Plugin pluginEntryPoint
     new JarFile(pluginFile).entries().each { entry ->
         if (!entry.isDirectory() && entry.name.endsWith(".class")) {
-            String className = entry.name[0..entry.name.length() - 7]
+            String className = entry.name[0..-7]
             className = className.replace('/', '.')
             println "  found class entry: $entry.name -> $className"
             Class pluginClass = classLoader.loadClass(className)
