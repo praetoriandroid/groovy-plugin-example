@@ -1,0 +1,2 @@
+rootProject.name = 'groovy-plugin-example'
+include ':main-app', 'plugin-interface', 'plugin-example'
